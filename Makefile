@@ -13,7 +13,7 @@ LDIR = libft
 LIB = ft
 FILE = fichier_test1.txt
 NAME = fillit
-.PHONY: re run rr clean fclean all
+.PHONY: re run rr clean fclean all $(NAME)
 
 all: libft.a $(NAME)
 
