@@ -2,7 +2,7 @@ CC = gcc
 CFLAG = -Wall -Wextra -Werror
 SRC = check_trio.c gt_sample.c add_tet_list.c add_tet_tab.c check_first.c \
 check_place.c  init_list.c put_dbtab.c putlist.c tet_new.c db_tabnew.c \
-del_tet_tab.c db_tabfree.c fillit.c main.c
+del_tet_tab.c db_tabfree.c lst_free.c end_fillit.c fillit.c main.c
 SRC_DIR = ./src
 SRC_C = $(patsubst %, $(SRC_DIR)/%, $(SRC))
 OBJ = $(patsubst %.c, %.o, $(SRC))
