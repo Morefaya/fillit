@@ -6,7 +6,7 @@
 /*   By: jcazako <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/23 13:07:51 by jcazako           #+#    #+#             */
-/*   Updated: 2016/01/19 17:59:55 by jcazako          ###   ########.fr       */
+/*   Updated: 2016/01/19 19:07:48 by jcazako          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,15 @@ static void	puterror(void)
 	exit(1);
 }
 
-int		main(int ac, char **av)
+static void	end_fillit(char ***tab, t_tet **list, char **str)
+{
+	put_dbtab(*tab);
+	db_tabfree(tab);
+	lst_free(list);
+	ft_strdel(str);
+}
+
+int			main(int ac, char **av)
 {
 	if (ac != 2)
 		puterror();

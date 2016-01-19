@@ -6,32 +6,31 @@
 /*   By: jcazako <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/23 18:07:52 by jcazako           #+#    #+#             */
-/*   Updated: 2015/12/23 18:58:51 by jcazako          ###   ########.fr       */
+/*   Updated: 2016/01/19 18:53:07 by jcazako          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 
-static int	check_range(char **tab, int rg_x, int rg_y, int size)
+static int	check_range(char **tab, t_pos rg, int size)
 {
-	if (rg_x < 0 || rg_x >= size)
+	if (rg.x < 0 || rg.x >= size)
 		return (0);
-	if (rg_y < 0 || rg_y >= size)
+	if (rg.y < 0 || rg.y >= size)
 		return (0);
-	if (tab[rg_y][rg_x] != '.')			
+	if (tab[rg.y][rg.x] != '.')			
 		return (0);
 	return (1);
 }
 
 int			check_place(char **tab, t_tet *tet, t_pos i, int size)
 {
-	t_pos	ft;
+	int		k;
 	t_pos	j;
-	int	rg_x;
-	int	rg_y;
+	t_pos	rg;
 
-	check_first(tet, &ft);
-	j.y = 0;
+	k = 0;
+	j.y = tet->ft.y;
 	while (j.y < 4)
 	{
 		j.x = 0;
@@ -39,11 +38,14 @@ int			check_place(char **tab, t_tet *tet, t_pos i, int size)
 		{
 			if (tet->shp[j.y][j.x] == '#')
 			{
-				rg_x = i.x + j.x - ft.x;
-				rg_y = i.y + j.y - ft.y;
-				if (!check_range(tab, rg_x, rg_y, size))
+				rg.x = i.x + j.x - tet->ft.x;
+				rg.y = i.y + j.y - tet->ft.y;
+				k++;
+				if (!check_range(tab, rg, size))
 					return (0);
 			}
+			if (k == 4)
+				return (1);
 			j.x++;
 		}
 		j.y++;

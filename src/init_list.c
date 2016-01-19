@@ -6,11 +6,33 @@
 /*   By: jcazako <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/23 13:05:21 by jcazako           #+#    #+#             */
-/*   Updated: 2015/12/23 17:30:23 by jcazako          ###   ########.fr       */
+/*   Updated: 2016/01/19 18:28:32 by jcazako          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
+
+static void	init_first(t_tet *tet)
+{
+	t_pos	i;
+
+	i.y = 0;
+	while (i.y < 4)
+	{
+		i.x = 0;
+		while (i.x < 4)
+		{
+			if (tet->shp[i.y][i.x] == '#')
+			{
+				tet->ft.x = i.x;
+				tet->ft.y = i.y;
+				return;
+			}
+			i.x++;
+		}
+		i.y++;
+	}
+}
 
 static void	init_shape(t_tet *tet, char **str)
 {
@@ -50,6 +72,7 @@ t_tet		*init_list(char *str, int nb_tet)
 	while (i < nb_tet)
 	{
 		init_shape(tet, &str);
+		init_first(tet);
 		str++;
 		i++;
 		tet = tet->next;
