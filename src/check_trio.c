@@ -6,7 +6,7 @@
 /*   By: jcazako <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/10 12:58:13 by jcazako           #+#    #+#             */
-/*   Updated: 2015/12/16 19:49:13 by jcazako          ###   ########.fr       */
+/*   Updated: 2016/01/21 12:09:40 by jcazako          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,12 +81,12 @@ static int	check_valid(char *str)
 	return (0);
 }
 
-int		check_trio(char *str, int nb_trio)
+int			check_trio(char *str, int nb_trio)
 {
 	int		nb_diez;
 
 	nb_diez = 4;
-	if(!(nb_diez = check_diez(str)))
+	if (!(nb_diez = check_diez(str)))
 		return (0);
 	if (!check_valid(str))
 		return (0);

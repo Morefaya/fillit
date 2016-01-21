@@ -6,7 +6,7 @@
 /*   By: jcazako <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/23 17:37:16 by jcazako           #+#    #+#             */
-/*   Updated: 2016/01/19 18:50:01 by jcazako          ###   ########.fr       */
+/*   Updated: 2016/01/21 12:03:56 by jcazako          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void		add_tet_tab(char **tab, t_tet *tet, t_pos i)
 				k++;
 			}
 			if (k == 4)
-				return;
+				return ;
 			j.x++;
 		}
 		j.y++;

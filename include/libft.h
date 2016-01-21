@@ -6,7 +6,7 @@
 /*   By: jcazako <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/27 18:27:44 by jcazako           #+#    #+#             */
-/*   Updated: 2015/12/07 13:01:04 by jcazako          ###   ########.fr       */
+/*   Updated: 2016/01/21 12:14:09 by jcazako          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,6 +73,6 @@ int		ft_nextch_pos(const char *str);
 int		ft_lastch_pos(const char *str);
 int		ft_pow(int nbr, int pow);
 int		ft_size_base(int nbr, int base);
-int	ft_sqrt(int nb);
+int		ft_sqrt(int nb);
 
 #endif

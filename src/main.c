@@ -6,7 +6,7 @@
 /*   By: jcazako <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/23 13:07:51 by jcazako           #+#    #+#             */
-/*   Updated: 2016/01/19 19:07:48 by jcazako          ###   ########.fr       */
+/*   Updated: 2016/01/21 12:12:10 by jcazako          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,19 +28,19 @@ static void	end_fillit(char ***tab, t_tet **list, char **str)
 
 int			main(int ac, char **av)
 {
-	if (ac != 2)
-		puterror();
 	char	*str;
 	int		nb_trio;
 	t_tet	*list;
 	int		size;
 	char	**tab;
 
+	if (ac != 2)
+		puterror();
 	str = gt_sample(av[1]);
 	nb_trio = check_trio(str, 0);
 	if (nb_trio == 0 || nb_trio > 26)
 		puterror();
-	list = init_list(str, nb_trio);	
+	list = init_list(str, nb_trio);
 	size = ft_sqrt(nb_trio * 4);
 	tab = db_tabnew(size);
 	while (!fillit(tab, list, size))

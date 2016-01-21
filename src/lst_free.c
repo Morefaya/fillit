@@ -6,7 +6,7 @@
 /*   By: jcazako <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/19 15:36:18 by jcazako           #+#    #+#             */
-/*   Updated: 2016/01/19 16:23:38 by jcazako          ###   ########.fr       */
+/*   Updated: 2016/01/21 12:09:59 by jcazako          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	lst_free(t_tet **list)
 {
 	while (*list)
 	{
-		free (*list);
+		free(*list);
 		*list = (*list)->next;
 	}
 }

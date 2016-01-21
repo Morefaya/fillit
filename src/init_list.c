@@ -6,7 +6,7 @@
 /*   By: jcazako <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/23 13:05:21 by jcazako           #+#    #+#             */
-/*   Updated: 2016/01/19 18:28:32 by jcazako          ###   ########.fr       */
+/*   Updated: 2016/01/21 12:11:23 by jcazako          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ static void	init_first(t_tet *tet)
 			{
 				tet->ft.x = i.x;
 				tet->ft.y = i.y;
-				return;
+				return ;
 			}
 			i.x++;
 		}

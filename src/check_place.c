@@ -6,7 +6,7 @@
 /*   By: jcazako <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/23 18:07:52 by jcazako           #+#    #+#             */
-/*   Updated: 2016/01/19 18:53:07 by jcazako          ###   ########.fr       */
+/*   Updated: 2016/01/21 12:11:54 by jcazako          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ static int	check_range(char **tab, t_pos rg, int size)
 		return (0);
 	if (rg.y < 0 || rg.y >= size)
 		return (0);
-	if (tab[rg.y][rg.x] != '.')			
+	if (tab[rg.y][rg.x] != '.')
 		return (0);
 	return (1);
 }
@@ -30,11 +30,11 @@ int			check_place(char **tab, t_tet *tet, t_pos i, int size)
 	t_pos	rg;
 
 	k = 0;
-	j.y = tet->ft.y;
-	while (j.y < 4)
+	j.y = tet->ft.y - 1;
+	while (++j.y < 4)
 	{
-		j.x = 0;
-		while (j.x < 4)
+		j.x = -1;
+		while (++j.x < 4)
 		{
 			if (tet->shp[j.y][j.x] == '#')
 			{
@@ -46,9 +46,7 @@ int			check_place(char **tab, t_tet *tet, t_pos i, int size)
 			}
 			if (k == 4)
 				return (1);
-			j.x++;
 		}
-		j.y++;
 	}
 	return (1);
 }
